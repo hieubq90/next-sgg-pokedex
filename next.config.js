@@ -8,7 +8,10 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles'), path.join(__dirname, 'components'), path.join(__dirname, 'pages')]
   },
   reactStrictMode: true,
-  swcMinify: true
+  swcMinify: true,
+  images: {
+    domains: ['img.pokemondb.net']
+  }
 }
 
 module.exports = nextConfig
