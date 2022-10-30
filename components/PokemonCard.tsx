@@ -1,6 +1,8 @@
 import React, {useMemo} from "react";
 import Image from 'next/image'
 import Link from 'next/link'
+// import IconHeartFilled from '~icons/ant-design/heart-filled.jsx';
+import IconHeartOutlined from '~icons/ant-design/heart-outlined.jsx';
 
 import { Pokemon } from "../types/Pokemon";
 
@@ -12,8 +14,13 @@ const PokemonCard: React.FunctionComponent<{
 
     return (
         <div className="w-48 p-2 mb-5 mx-4 flex flex-col border border-gray-200 rounded-md shadow-md">
-            <div className="font-light text-slate-300">
-                { `#${pokemon.num.toString().padStart(3, '0')}` }
+            <div className="flex content-center justify-between font-light text-slate-300">
+                <span>
+                    { `#${pokemon.num.toString().padStart(3, '0')}` }
+                </span>
+                <div className="flex items-center cursor-pointer">
+                    <IconHeartOutlined className="text-red-500" />
+                </div>
             </div>
             <div className="relative w-40 h-44 mx-auto">
                 <Image alt="sprite" src={pokemon.sprite} fill sizes="160px" />
